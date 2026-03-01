@@ -19,136 +19,144 @@
     .accent-text { color: #0F2B5B; }
     header { background: linear-gradient(to bottom, #0F2B5B, #1A3A7A); }
     .section-bg { background-color: #1A3A7A; }
-    .card-bg { background-color: #0F2B5B; }
+    .card-bg { background-color: #0F2B5B; border: 1px solid #D4AF37; }
     .carousel-container {
       background-color: #1A3A7A;
       border-radius: 0.75rem;
       overflow: hidden;
       box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4);
     }
-    .checkmark { color: #D4AF37; font-weight: bold; font-size: 1.2rem; }
-    .cross { color: #ff6b6b; font-weight: bold; font-size: 1.2rem; }
-    input, textarea { background-color: #ffffff !important; color: #0F2B5B !important; }
-    html, body, section, div:not(.bg-white) { background-color: inherit !important; }
-    .testimonial-text { font-size: 1.125rem; line-height: 1.75; }
+    .checkmark { color: #D4AF37; font-weight: bold; font-size: 1.25rem; margin-right: 0.5rem; }
+    .cross { color: #ff6b6b; font-weight: bold; font-size: 1.25rem; margin-right: 0.5rem; }
+    input, textarea { 
+      background-color: #ffffff !important; 
+      color: #0F2B5B !important; 
+      border: 1px solid #D4AF37; 
+    }
+    .gold-text { color: #D4AF37; }
+    .testimonial-text { font-size: 1.125rem; line-height: 1.8; }
+    html, body, section, div:not(input):not(textarea) { background-color: inherit !important; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
   <!-- Hero Header -->
-  <header class="text-center py-16 px-6">
-    <h1 class="text-5xl md:text-7xl font-bold text-[#D4AF37]">
+  <header class="text-center py-20 px-6">
+    <h1 class="text-5xl md:text-7xl font-bold gold-text">
       JLZ Handiwork
     </h1>
 
     <img 
       src="hero-pro.jpg" 
-      alt="Jorge – JLZ Handiwork owner" 
-      class="mt-8 mx-auto max-w-md w-full h-auto rounded-lg border-4 border-[#D4AF37] shadow-2xl object-cover"
+      alt="Jorge – Owner & Lead Handyman" 
+      class="mt-10 mx-auto max-w-md w-full h-auto rounded-xl border-4 border-[#D4AF37] shadow-2xl object-cover"
     />
 
-    <p class="mt-6 text-xl md:text-2xl text-white">
-      Quality Work Guaranteed • Repairs • Painting • Drywall • More
+    <p class="mt-8 text-xl md:text-2xl text-white font-medium">
+      Reliable Repairs • Painting • Drywall • Carpentry • Quality Work Guaranteed
     </p>
 
     <a 
       href="tel:+17609097770" 
-      class="mt-8 inline-block accent-bg accent-text px-10 py-5 rounded-lg text-xl font-bold shadow-lg hover:accent-hover transition"
+      class="mt-10 inline-block accent-bg accent-text px-12 py-6 rounded-xl text-xl font-bold shadow-xl hover:accent-hover transition transform hover:scale-105"
     >
-      Call (760) 909-7770
+      Call Now: (760) 909-7770
     </a>
   </header>
 
   <!-- About -->
-  <section class="py-16 px-6 section-bg text-white">
+  <section class="py-20 px-6 section-bg">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-[#D4AF37] mb-8">About JLZ Handiwork</h2>
-      <p class="text-lg max-w-3xl mx-auto leading-relaxed">
+      <h2 class="text-4xl md:text-5xl font-bold gold-text mb-10">About JLZ Handiwork</h2>
+      <p class="text-xl text-white leading-relaxed max-w-4xl mx-auto">
         Hi, I'm Jorge, the hands and heart behind JLZ Handiwork.<br><br>
-        I've spent over a decade helping homeowners fix, build, and improve their spaces with care and precision. I treat every project as if it were my own home — clean spaces, clear communication, and pride in every detail.<br><br>
-        Whether it's carpentry, drywall repair, painting, or fine-tuning doors and windows, I make sure it's done right the first time. My goal is simple: leave every client feeling confident, respected, and satisfied with the work.<br><br>
-        If you're looking for someone reliable, skilled, and easy to work with — I've got you covered.
+        With over a decade of experience, I’ve dedicated myself to helping homeowners fix, build, and improve their spaces with care, precision, and pride. Every project is treated as if it were my own home — clean work areas, clear communication, and attention to every detail.<br><br>
+        From carpentry and drywall repair to painting and fine-tuning doors & windows, I ensure the job is done right the first time. My goal is straightforward: leave every client feeling confident, respected, and completely satisfied.<br><br>
+        Looking for a reliable, skilled, and easy-to-work-with handyman? You’ve found him.
       </p>
     </div>
   </section>
 
-  <!-- Trust Bar -->
-  <section class="py-12 px-6 text-center section-bg">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <div class="text-3xl text-[#D4AF37]">4.9</div>
-        <div class="text-white">from 27 reviews</div>
+  <!-- Trust Highlights -->
+  <section class="py-16 px-6 text-center section-bg">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="p-8 rounded-xl card-bg">
+        <div class="text-5xl font-bold gold-text">4.9</div>
+        <div class="text-xl text-white mt-3">from 27 reviews</div>
       </div>
-      <div>
-        <div class="text-3xl text-[#D4AF37]">Licensed<br>& Insured</div>
+      <div class="p-8 rounded-xl card-bg">
+        <div class="text-5xl font-bold gold-text">Licensed<br>& Insured</div>
       </div>
-      <div>
-        <div class="text-3xl text-[#D4AF37]">Local<br>Since 2015</div>
+      <div class="p-8 rounded-xl card-bg">
+        <div class="text-5xl font-bold gold-text">Local<br>Since 2015</div>
       </div>
     </div>
   </section>
 
-  <!-- Carousel (placeholders) -->
-  <section class="py-16 px-6 section-bg">
-    <div class="max-w-5xl mx-auto">
+  <!-- Carousel -->
+  <section class="py-20 px-6 section-bg">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold gold-text text-center mb-12">Before & After</h2>
       <div class="carousel-container" id="carousel">
         <div class="carousel-track" id="track">
           <img src="https://via.placeholder.com/1200x600/0F2B5B/ffffff?text=Before+%3A+Old+Fence" alt="Before" class="carousel-slide"/>
           <img src="https://via.placeholder.com/1200x600/0F2B5B/D4AF37?text=After+%3A+New+Fence" alt="After" class="carousel-slide"/>
-          <!-- Add your real before/after images here later -->
+          <!-- Replace with real images when ready -->
         </div>
         <button class="carousel-arrow prev" id="prev">←</button>
         <button class="carousel-arrow next" id="next">→</button>
         <div class="carousel-dots" id="dots"></div>
       </div>
-      <p class="text-center mt-4 text-lg text-white">
-        Before & After – Swipe or tap arrows
+      <p class="text-center mt-6 text-xl text-white">
+        Real results – swipe or use arrows to see transformations
       </p>
     </div>
   </section>
 
   <!-- Services -->
-  <section class="py-16 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl font-bold text-[#D4AF37] text-center mb-12">
-        Services Offered
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-white text-lg">
-        <div>
-          <h3 class="text-2xl text-[#D4AF37] mb-4">Project Type</h3>
-          <ul class="space-y-3">
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold gold-text text-center mb-16">Services Offered</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-xl">
+        
+        <div class="card-bg p-10 rounded-2xl">
+          <h3 class="text-3xl font-bold gold-text mb-6">Project Type</h3>
+          <ul class="space-y-4">
             <li><span class="checkmark">✓</span> Repairs</li>
             <li><span class="checkmark">✓</span> Installation</li>
             <li><span class="checkmark">✓</span> Maintenance</li>
             <li><span class="checkmark">✓</span> Assembly</li>
             <li><span class="checkmark">✓</span> Painting</li>
             <li><span class="checkmark">✓</span> Other handyman services</li>
-            <li><span class="cross">×</span> Cleaning</li>
+            <li class="mt-6"><span class="cross">×</span> Cleaning</li>
           </ul>
         </div>
-        <div>
-          <h3 class="text-2xl text-[#D4AF37] mb-4">Estimated Hours</h3>
-          <ul class="space-y-3">
-            <li><span class="checkmark">✓</span> 2-5 hours of work</li>
+
+        <div class="card-bg p-10 rounded-2xl">
+          <h3 class="text-3xl font-bold gold-text mb-6">Estimated Time</h3>
+          <ul class="space-y-4">
+            <li><span class="checkmark">✓</span> 2–5 hours of work</li>
             <li><span class="checkmark">✓</span> A full day of work</li>
-            <li><span class="cross">×</span> Less than 2 hours of work</li>
+            <li class="mt-6"><span class="cross">×</span> Less than 2 hours of work</li>
           </ul>
         </div>
-        <div>
-          <h3 class="text-2xl text-[#D4AF37] mb-4">Work Focus</h3>
-          <ul class="space-y-3">
+
+        <div class="card-bg p-10 rounded-2xl md:col-span-2 lg:col-span-1">
+          <h3 class="text-3xl font-bold gold-text mb-6">Work Focus</h3>
+          <ul class="space-y-4">
             <li><span class="checkmark">✓</span> Doors</li>
             <li><span class="checkmark">✓</span> Windows</li>
             <li><span class="checkmark">✓</span> Interior walls</li>
             <li><span class="checkmark">✓</span> Exterior walls</li>
             <li><span class="checkmark">✓</span> Shelving</li>
             <li><span class="checkmark">✓</span> Molding or baseboards</li>
-            <li><span class="cross">×</span> Gutters, Cabinets, Flooring, Tiling, Appliances, Plumbing, Electrical, Lighting, Hanging pictures/mirrors, Furniture repair, Other</li>
+            <li class="mt-6"><span class="cross">×</span> Gutters, Cabinets, Flooring, Tiling, Appliances, Plumbing, Electrical, Lighting, Hanging pictures/mirrors, Furniture repair, Other</li>
           </ul>
         </div>
-        <div>
-          <h3 class="text-2xl text-[#D4AF37] mb-4">Property Type</h3>
-          <ul class="space-y-3">
+
+        <div class="card-bg p-10 rounded-2xl">
+          <h3 class="text-3xl font-bold gold-text mb-6">Property Type</h3>
+          <ul class="space-y-4">
             <li><span class="checkmark">✓</span> Residential</li>
             <li><span class="checkmark">✓</span> Commercial</li>
           </ul>
@@ -157,67 +165,67 @@
     </div>
   </section>
 
-  <!-- Testimonials – improved readability -->
-  <section class="py-16 px-6 section-bg">
-    <div class="max-w-4xl mx-auto space-y-10">
-      <h2 class="text-4xl font-bold text-[#D4AF37] text-center mb-12">
-        What Clients Say
-      </h2>
-      <div class="card-bg p-8 rounded-xl shadow-lg">
-        <p class="testimonial-text text-white">"Fixed my fence in one day – no mess left behind! Fast, clean, and professional."</p>
-        <p class="mt-4 font-semibold text-[#D4AF37]">Sarah next door ★★★★★</p>
-      </div>
-      <div class="card-bg p-8 rounded-xl shadow-lg">
-        <p class="testimonial-text text-white">"Deck looks brand new again. Fair price and excellent craftsmanship."</p>
-        <p class="mt-4 font-semibold text-[#D4AF37]">Mike ★★★★★</p>
-      </div>
-      <div class="card-bg p-8 rounded-xl shadow-lg">
-        <p class="testimonial-text text-white">"Jorge really listens and the job was perfect. Highly recommend!"</p>
-        <p class="mt-4 font-semibold text-[#D4AF37]">Lisa (via Thumbtack) ★★★★★</p>
+  <!-- Testimonials -->
+  <section class="py-20 px-6 section-bg">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold gold-text text-center mb-16">Client Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="card-bg p-8 rounded-2xl">
+          <p class="testimonial-text text-white">"Fixed my fence in one day – no mess left behind! Fast, clean, and professional."</p>
+          <p class="mt-6 font-semibold gold-text text-lg">Sarah next door ★★★★★</p>
+        </div>
+        <div class="card-bg p-8 rounded-2xl">
+          <p class="testimonial-text text-white">"Deck looks brand new again. Fair price and excellent craftsmanship."</p>
+          <p class="mt-6 font-semibold gold-text text-lg">Mike ★★★★★</p>
+        </div>
+        <div class="card-bg p-8 rounded-2xl">
+          <p class="testimonial-text text-white">"Jorge really listens and the job was perfect. Highly recommend!"</p>
+          <p class="mt-6 font-semibold gold-text text-lg">Lisa (via Thumbtack) ★★★★★</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section class="py-16 px-6">
+  <!-- Contact -->
+  <section class="py-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-[#D4AF37] mb-8">
-        Get Your Free Quote Today
-      </h2>
+      <h2 class="text-4xl md:text-5xl font-bold gold-text mb-12">Get Your Free Quote</h2>
+      
       <form id="quote-form" class="space-y-6 max-w-lg mx-auto">
-        <input type="text" placeholder="Your Name" required class="w-full p-4 rounded bg-white text-[#0F2B5B] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"/>
-        <input type="tel" placeholder="Phone Number" required class="w-full p-4 rounded bg-white text-[#0F2B5B] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"/>
-        <textarea placeholder="Tell me what needs fixing (fence, deck, paint, drywall, etc.)" rows="5" required class="w-full p-4 rounded bg-white text-[#0F2B5B] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"></textarea>
-        <button type="submit" class="w-full accent-bg accent-text px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:accent-hover transition">
+        <input type="text" placeholder="Your Name" required class="w-full p-5 rounded-xl text-lg"/>
+        <input type="tel" placeholder="Phone Number" required class="w-full p-5 rounded-xl text-lg"/>
+        <textarea placeholder="Describe what needs fixing (fence, deck, paint, drywall, etc.)" rows="5" required class="w-full p-5 rounded-xl text-lg"></textarea>
+        <button type="submit" class="w-full accent-bg accent-text py-6 rounded-xl font-bold text-2xl shadow-xl hover:accent-hover transition transform hover:scale-105">
           Send Message → Get Quote
         </button>
       </form>
-      <div class="mt-10 text-white text-lg space-y-3">
-        <p>Or contact me directly:</p>
-        <p><a href="tel:+17609097770" class="hover:text-[#D4AF37]">(760) 909-7770</a></p>
-        <p><a href="mailto:jlzhandiwork@gmail.com" class="hover:text-[#D4AF37]">jlzhandiwork@gmail.com</a></p>
+
+      <div class="mt-12 text-xl gold-text space-y-4">
+        <p>Or reach me directly:</p>
+        <p><a href="tel:+17609097770" class="hover:underline">(760) 909-7770</a></p>
+        <p><a href="mailto:jlzhandiwork@gmail.com" class="hover:underline">jlzhandiwork@gmail.com</a></p>
         <p>null Camino Del Cielo, San Diego County, CA</p>
+        <p class="text-lg mt-6">Monday–Saturday: 7:00 AM – 7:00 PM<br>Closed Sunday</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 bg-[#0F2B5B] text-center text-white border-t border-[#1A3A7A]">
-    <p class="text-lg">© 2026 JLZ Handiwork – Built Tough</p>
-    <p class="mt-3">(760) 909-7770 • jlzhandiwork@gmail.com</p>
+  <footer class="py-12 bg-[#0F2B5B] text-center text-white border-t border-[#1A3A7A]">
+    <p class="text-xl font-medium">© 2026 JLZ Handiwork – Built Tough</p>
+    <p class="mt-4 text-lg">(760) 909-7770 • jlzhandiwork@gmail.com</p>
     <p class="mt-2">null Camino Del Cielo, San Diego County, California</p>
-    <p class="mt-4 text-sm">Monday–Saturday: 7:00 AM – 7:00 PM • Closed Sunday</p>
   </footer>
 
   <script>
     document.getElementById('quote-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert("Thanks! Your quote request has been sent. (Real backend coming soon)");
+      alert("Thank you! Your quote request has been sent. (Real backend coming soon)");
       this.reset();
     });
 
-    // Carousel script – replace with your full working version if needed
-    // (dots, auto-rotate, swipe support, etc.)
+    // Carousel script – keep your full working version here
+    // (dots, swipe, auto-rotate, etc.)
   </script>
 
 </body>
