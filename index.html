@@ -118,6 +118,12 @@
       align-items: center;
       gap: 10px;
     }
+    .nav-logo-img {
+      height: 42px;
+      width: auto;
+      /* Invert the black logo to gold so it matches the site palette */
+      filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.95);
+    }
     .nav-logo span { color: var(--gold); }
     .nav-logo .logo-dot {
       width: 8px; height: 8px;
@@ -618,8 +624,24 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 120px; }
-      .hero-image-side { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+      .hero-image-side {
+        display: flex;
+        height: auto;
+        padding: 0 0 20px;
+      }
+      .hero-img-wrapper {
+        height: 420px;
+        max-width: 100%;
+      }
+      /* Hide floating badges on mobile — they overflow on single column */
+      .hero-badge,
+      .hero-rating { display: none; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .before-after-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -637,6 +659,7 @@
       .footer-top { grid-template-columns: 1fr; gap: 36px; }
       .form-row { grid-template-columns: 1fr; }
       .hero-stats { gap: 28px; flex-wrap: wrap; }
+      .hero-img-wrapper { height: 340px; }
     }
 
     /* Scroll animations */
@@ -690,7 +713,7 @@
     /* Mobile: collapse to round icon, lift above browser nav bar */
     @media (max-width: 640px) {
       .sms-fab {
-        bottom: 88px;
+        bottom: 24px;
         right: 20px;
         padding: 16px;
         border-radius: 50%;
@@ -710,7 +733,9 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="container nav-inner">
-      <a href="#" class="nav-logo">JLZ <span>Handiwork</span></a>
+      <a href="#" class="nav-logo">
+        <img src="logo_jpg.png" alt="JLZ Handiwork Logo" class="nav-logo-img" />
+      </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -1047,7 +1072,7 @@
             </div>
             <div>
               <div class="contact-label">Email</div>
-              <a href="/cdn-cgi/l/email-protection#80eaecfae8e1eee4e9f7eff2ebc0e7ede1e9ecaee3efed" class="contact-value"><span class="__cf_email__" data-cfemail="a7cdcbddcfc6c9c3ced0c8d5cce7c0cac6cecb89c4c8ca">[email&#160;protected]</span></a>
+              <a href="mailto:jlzhandiwork@gmail.com" class="contact-value">jlzhandiwork@gmail.com</a>
             </div>
           </div>
 
@@ -1145,7 +1170,7 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:+17609097770">(760) 909-7770</a></li>
-            <li><a href="/cdn-cgi/l/email-protection#8fe5e3f5e7eee1ebe6f8e0fde4cfe8e2eee6e3a1ece0e2"><span class="__cf_email__" data-cfemail="553f392f3d343b313c223a273e153238343c397b363a38">[email&#160;protected]</span></a></li>
+            <li><a href="mailto:jlzhandiwork@gmail.com">jlzhandiwork@gmail.com</a></li>
             <li><a href="#contact">Free Quote</a></li>
             <li><a href="#testimonials">Reviews</a></li>
           </ul>
@@ -1158,7 +1183,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // ── Navbar scroll shadow
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
