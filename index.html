@@ -119,17 +119,22 @@
       gap: 10px;
     }
     .nav-logo-img {
-      height: 42px;
+      height: 38px;
       width: auto;
-      /* Invert the black logo to gold so it matches the site palette */
-      filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.95);
+      /* White icons, gold text area — matches the site palette */
+      filter: brightness(0) invert(1);
     }
-    .nav-logo span { color: var(--gold); }
+    .nav-logo-text { color: var(--white); }
+    .nav-logo-text span { color: var(--gold); }
     .nav-logo .logo-dot {
       width: 8px; height: 8px;
       background: var(--gold);
       border-radius: 50%;
       display: inline-block;
+    }
+    @media (max-width: 768px) {
+      .nav-logo-img { height: 30px; }
+      .nav-logo { font-size: 1.2rem; gap: 8px; }
     }
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a {
@@ -735,6 +740,7 @@
     <div class="container nav-inner">
       <a href="#" class="nav-logo">
         <img src="logo_jpg.png" alt="JLZ Handiwork Logo" class="nav-logo-img" />
+        <span class="nav-logo-text">JLZ <span>Handiwork</span></span>
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -1072,7 +1078,7 @@
             </div>
             <div>
               <div class="contact-label">Email</div>
-              <a href="mailto:jlzhandiwork@gmail.com" class="contact-value">jlzhandiwork@gmail.com</a>
+              <a href="/cdn-cgi/l/email-protection#670d0b1d0f0609030e1008150c27000a060e0b4904080a" class="contact-value"><span class="__cf_email__" data-cfemail="23494f594b424d474a544c514863444e424a4f0d404c4e">[email&#160;protected]</span></a>
             </div>
           </div>
 
@@ -1170,7 +1176,7 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:+17609097770">(760) 909-7770</a></li>
-            <li><a href="mailto:jlzhandiwork@gmail.com">jlzhandiwork@gmail.com</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#e98385938188878d809e869b82a98e84888085c78a8684"><span class="__cf_email__" data-cfemail="9df7f1e7f5fcf3f9f4eaf2eff6ddfaf0fcf4f1b3fef2f0">[email&#160;protected]</span></a></li>
             <li><a href="#contact">Free Quote</a></li>
             <li><a href="#testimonials">Reviews</a></li>
           </ul>
@@ -1183,7 +1189,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── Navbar scroll shadow
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -1218,13 +1224,13 @@
     });
   </script>
 
+
   <!-- ── FLOATING SMS BUTTON ── -->
   <a
     class="sms-fab"
     href="sms:+17609097770&body=Hi%20Jorge%2C%20I%20found%20your%20site%20and%20would%20like%20to%20get%20a%20free%20quote."
     aria-label="Text Jorge for a free quote"
   >
-    <!-- Chat bubble / SMS icon -->
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
     </svg>
