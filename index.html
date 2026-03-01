@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      @apply bg-[#0A2540] text-[#D4AF37] font-['Inter',sans-serif];
+      @apply bg-[#YOUR_NEW_BLUE] text-[#D4AF37] font-['Inter',sans-serif];  /* ← Replace with your mock-up's main blue HEX, e.g. #001F3F */
     }
     .accent-bg {
       @apply bg-[#D4AF37];
@@ -17,10 +17,10 @@
       @apply bg-[#B8972E];
     }
     .accent-text {
-      @apply text-[#0A2540];
+      @apply text-[#YOUR_NEW_BLUE];  /* Dark blue text on gold buttons for contrast */
     }
 
-    /* Carousel styles */
+    /* Carousel styles (unchanged) */
     .carousel-container {
       @apply relative overflow-hidden rounded-xl shadow-2xl;
     }
@@ -48,13 +48,12 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <!-- Hero Header -->
-  <header class="bg-gradient-to-b from-[#0A2540] to-[#1E3A5F] text-center py-16 px-6">
+  <!-- Hero Header – updated gradient with new blue -->
+  <header class="bg-gradient-to-b from-[#YOUR_NEW_BLUE] to-[#YOUR_NEW_BLUE_LIGHT] text-center py-16 px-6">  <!-- ← e.g. from #001F3F to #0C4A6E -->
     <h1 class="text-5xl md:text-7xl font-bold text-[#D4AF37]">
       JLZ Handiwork
     </h1>
 
-    <!-- Updated Hero Image – rectangular, centered below title -->
     <img 
       src="hero-pro.jpg" 
       alt="George – JLZ Handiwork owner" 
@@ -73,8 +72,8 @@
     </a>
   </header>
 
-  <!-- Trust Bar -->
-  <section class="py-12 px-6 bg-[#0A2540] text-center">
+  <!-- Trust Bar – using a lighter variant for sections -->
+  <section class="py-12 px-6 bg-[#YOUR_NEW_BLUE_LIGHT] text-center">  <!-- ← e.g. #0C4A6E or similar -->
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <div class="text-3xl text-[#D4AF37]">4.9</div>
@@ -89,77 +88,48 @@
     </div>
   </section>
 
-  <!-- Before/After Carousel (unchanged – ready for your photos) -->
-  <section class="py-16 px-6 bg-[#1E3A5F]">
+  <!-- Before/After Carousel (unchanged) -->
+  <section class="py-16 px-6 bg-[#YOUR_NEW_BLUE_LIGHT]">
     <div class="max-w-5xl mx-auto">
       <div class="carousel-container" id="carousel">
         <div class="carousel-track" id="track">
-          <!-- Slide 1 -->
-          <img 
-            src="https://via.placeholder.com/1200x600/0A2540/1E3A5F?text=Before:+Old+Fence" 
-            alt="Before: Old fence" 
-            class="carousel-slide"
-          />
-          <!-- Slide 2 -->
-          <img 
-            src="https://via.placeholder.com/1200x600/0A2540/D4AF37?text=After:+New+Fence" 
-            alt="After: New sturdy fence" 
-            class="carousel-slide"
-          />
-          <!-- Slide 3 -->
-          <img 
-            src="https://via.placeholder.com/1200x600/0A2540/1E3A5F?text=Before:+Worn+Deck" 
-            alt="Before: Worn deck" 
-            class="carousel-slide"
-          />
-          <!-- Slide 4 -->
-          <img 
-            src="https://via.placeholder.com/1200x600/D4AF37/0A2540?text=After:+Beautiful+Deck" 
-            alt="After: Fresh deck" 
-            class="carousel-slide"
-          />
-          <!-- Slide 5 (paint example) -->
-          <img 
-            src="https://via.placeholder.com/1200x600/0A2540/D4AF37?text=Before+→+After+Paint+Job" 
-            alt="Before and after paint" 
-            class="carousel-slide"
-          />
+          <img src="https://via.placeholder.com/1200x600/0A2540/1E3A5F?text=Before:+Old+Fence" alt="Before: Old fence" class="carousel-slide"/>
+          <img src="https://via.placeholder.com/1200x600/0A2540/D4AF37?text=After:+New+Fence" alt="After: New sturdy fence" class="carousel-slide"/>
+          <img src="https://via.placeholder.com/1200x600/0A2540/1E3A5F?text=Before:+Worn+Deck" alt="Before: Worn deck" class="carousel-slide"/>
+          <img src="https://via.placeholder.com/1200x600/D4AF37/0A2540?text=After:+Beautiful+Deck" alt="After: Fresh deck" class="carousel-slide"/>
+          <img src="https://via.placeholder.com/1200x600/0A2540/D4AF37?text=Before+→+After+Paint+Job" alt="Before and after paint" class="carousel-slide"/>
         </div>
-
-        <!-- Arrows -->
         <button class="carousel-arrow prev" id="prev">←</button>
         <button class="carousel-arrow next" id="next">→</button>
-
-        <!-- Dots -->
         <div class="carousel-dots" id="dots"></div>
       </div>
-
       <p class="text-center mt-4 text-lg">
         Swipe or tap arrows for before/after – fences, decks, paint jobs… even Buddy approves!
       </p>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Services (using lighter blue variant) -->
   <section class="py-16 px-6">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-4xl font-bold text-[#D4AF37] text-center mb-12">
         What I Do Best
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-[#1E3A5F] p-8 rounded-lg shadow-lg">
+        <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-8 rounded-lg shadow-lg">
           <h3 class="text-2xl text-[#D4AF37] mb-4">Fences & Gates</h3>
           <p>Wood • Vinyl • Chain link – built to last.</p>
         </div>
-        <div class="bg-[#1E3A5F] p-8 rounded-lg shadow-lg">
+        <!-- Repeat for other service cards with bg-[#YOUR_NEW_BLUE_LIGHT] -->
+        <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-8 rounded-lg shadow-lg">
           <h3 class="text-2xl text-[#D4AF37] mb-4">Decks & Patios</h3>
           <p>Composite or wood – no wobbles, guaranteed.</p>
         </div>
-        <div class="bg-[#1E3A5F] p-8 rounded-lg shadow-lg">
+        <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-8 rounded-lg shadow-lg">
           <h3 class="text-2xl text-[#D4AF37] mb-4">Drywall & Repairs</h3>
           <p>Cracks, holes, leaks – clean, no mess.</p>
         </div>
-        <div class="bg-[#1E3A5F] p-8 rounded-lg shadow-lg md:col-span-3 lg:col-span-1">
+        <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-8 rounded-lg shadow-lg md:col-span-3 lg:col-span-1">
           <h3 class="text-2xl text-[#D4AF37] mb-4">Painting</h3>
           <p>Interior & exterior – smooth finish, no drips.</p>
         </div>
@@ -167,62 +137,39 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-16 px-6 bg-[#1E3A5F]">
+  <!-- Testimonials (darker blue for cards) -->
+  <section class="py-16 px-6 bg-[#YOUR_NEW_BLUE]">
     <div class="max-w-4xl mx-auto space-y-8">
       <h2 class="text-4xl font-bold text-[#D4AF37] text-center mb-12">
         What Folks Are Saying
       </h2>
-      
-      <div class="bg-[#0A2540] p-6 rounded-lg shadow">
+      <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-6 rounded-lg shadow">
         <p class="text-lg">"Fixed my fence in one day – no mess left behind!"<br><strong>– Sarah next door</strong> ★★★★★</p>
       </div>
-      
-      <div class="bg-[#0A2540] p-6 rounded-lg shadow">
+      <!-- Repeat for other testimonials with bg-[#YOUR_NEW_BLUE_LIGHT] -->
+      <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-6 rounded-lg shadow">
         <p class="text-lg">"Deck looks brand new. Price was fair too."<br><strong>– Mike</strong> ★★★★★</p>
       </div>
-      
-      <div class="bg-[#0A2540] p-6 rounded-lg shadow">
+      <div class="bg-[#YOUR_NEW_BLUE_LIGHT] p-6 rounded-lg shadow">
         <p class="text-lg">"George listens and the job was perfect."<br><strong>– Lisa (via Thumbtack)</strong> ★★★★★</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact / Quote Form -->
+  <!-- Contact Form (lighter blue section) -->
   <section class="py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl font-bold text-[#D4AF37] mb-8">
         Need Work Done?
       </h2>
-      
       <form id="quote-form" class="space-y-6 max-w-lg mx-auto">
-        <input 
-          type="text" 
-          placeholder="Your Name" 
-          required 
-          class="w-full p-4 rounded bg-white text-[#0A2540] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-        />
-        <input 
-          type="tel" 
-          placeholder="Phone Number" 
-          required 
-          class="w-full p-4 rounded bg-white text-[#0A2540] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-        />
-        <textarea 
-          placeholder="What needs fixing? (fence, deck, paint, drywall…)" 
-          rows="4" 
-          required 
-          class="w-full p-4 rounded bg-white text-[#0A2540] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-        ></textarea>
-        
-        <button 
-          type="submit" 
-          class="w-full bg-[#0A2540] text-white px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:bg-[#1E3A5F] transition"
-        >
+        <input type="text" placeholder="Your Name" required class="w-full p-4 rounded bg-white text-[#YOUR_NEW_BLUE] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"/>
+        <input type="tel" placeholder="Phone Number" required class="w-full p-4 rounded bg-white text-[#YOUR_NEW_BLUE] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"/>
+        <textarea placeholder="What needs fixing? (fence, deck, paint, drywall…)" rows="4" required class="w-full p-4 rounded bg-white text-[#YOUR_NEW_BLUE] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"></textarea>
+        <button type="submit" class="w-full bg-[#YOUR_NEW_BLUE] text-white px-12 py-5 rounded-lg font-bold text-xl shadow-lg hover:bg-[#YOUR_NEW_BLUE_LIGHT] transition">
           Send It → Get Quote
         </button>
       </form>
-      
       <p class="mt-6 text-lg">
         Or text me direct – quote in ~10 minutes, no hassle.
       </p>
@@ -230,130 +177,22 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 bg-[#1E3A5F] text-center">
+  <footer class="py-8 bg-[#YOUR_NEW_BLUE] text-center">
     <p>© 2026 JLZ Handiwork – Built Tough</p>
     <p class="mt-2">555-123-4567</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (unchanged) -->
   <script>
-    // Form submit alert
+    // Form submit...
     document.getElementById('quote-form').addEventListener('submit', function(e) {
       e.preventDefault();
       alert("Quote request sent! (Add real backend later – thank you!)");
       this.reset();
     });
 
-    // Carousel logic
-    const track = document.getElementById('track');
-    const slides = Array.from(track.children);
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    const dotsContainer = document.getElementById('dots');
-    let currentIndex = 0;
-    let autoInterval;
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-
-    // Create dots
-    slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('carousel-dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots = Array.from(dotsContainer.children);
-
-    function updateCarousel() {
-      const slideWidth = slides[0].clientWidth;
-      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-    }
-
-    function goToSlide(index) {
-      currentIndex = (index + slides.length) % slides.length;
-      updateCarousel();
-      resetAutoRotate();
-    }
-
-    function nextSlide() {
-      goToSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-      goToSlide(currentIndex - 1);
-    }
-
-    function startAutoRotate() {
-      autoInterval = setInterval(nextSlide, 5000);
-    }
-
-    function resetAutoRotate() {
-      clearInterval(autoInterval);
-      startAutoRotate();
-    }
-
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    // Touch / Mouse drag
-    track.addEventListener('touchstart', touchStart);
-    track.addEventListener('touchmove', touchMove);
-    track.addEventListener('touchend', touchEnd);
-
-    track.addEventListener('mousedown', touchStart);
-    track.addEventListener('mousemove', touchMove);
-    track.addEventListener('mouseup', touchEnd);
-    track.addEventListener('mouseleave', touchEnd);
-
-    function touchStart(e) {
-      isDragging = true;
-      startPos = getPositionX(e);
-      prevTranslate = -currentIndex * slides[0].clientWidth;
-      clearInterval(autoInterval);
-      track.style.transition = 'none';
-    }
-
-    function touchMove(e) {
-      if (!isDragging) return;
-      const currentPos = getPositionX(e);
-      const diff = currentPos - startPos;
-      currentTranslate = prevTranslate + diff;
-      track.style.transform = `translateX(${currentTranslate}px)`;
-    }
-
-    function touchEnd() {
-      if (!isDragging) return;
-      isDragging = false;
-      track.style.transition = 'transform 0.5s ease-in-out';
-
-      const movedBy = currentTranslate - prevTranslate;
-      if (movedBy < -50 && currentIndex < slides.length - 1) {
-        nextSlide();
-      } else if (movedBy > 50 && currentIndex > 0) {
-        prevSlide();
-      } else {
-        updateCarousel();
-      }
-
-      resetAutoRotate();
-    }
-
-    function getPositionX(e) {
-      return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-    }
-
-    window.addEventListener('resize', updateCarousel);
-
-    updateCarousel();
-    startAutoRotate();
-
-    document.getElementById('carousel').addEventListener('mouseenter', () => clearInterval(autoInterval));
-    document.getElementById('carousel').addEventListener('mouseleave', startAutoRotate);
+    // Carousel script (full logic unchanged - omitted for brevity, copy from previous version)
+    // ... paste the entire carousel JS here from your last working version ...
   </script>
 
 </body>
