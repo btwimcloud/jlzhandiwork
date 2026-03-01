@@ -3,219 +3,1135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JLZ Handiwork – Quality Handyman Services</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>JLZ Handiwork – Quality Handyman Services | San Diego County, CA</title>
+  <meta name="description" content="Professional handyman services in San Diego County. Repairs, painting, drywall, carpentry & more. Licensed & insured. Call (760) 909-7770." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --navy:        #0D2447;
+      --navy-mid:    #142f5e;
+      --navy-light:  #1c3f7a;
+      --gold:        #C9A84C;
+      --gold-light:  #e2c97e;
+      --gold-pale:   #f7edcc;
+      --white:       #FFFFFF;
+      --off-white:   #f4f0e6;
+      --text-dark:   #0D2447;
+      --text-mid:    #2d4b7f;
+      --radius:      12px;
+      --radius-lg:   20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color: #0F2B5B;
-      color: #D4AF37;               /* Default to gold for high contrast */
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--gold);
+      overflow-x: hidden;
     }
-    .accent-bg { background-color: #D4AF37; }
-    .accent-hover { background-color: #B8972E; }
-    .accent-text { color: #0F2B5B; }
-    header { background: linear-gradient(to bottom, #0F2B5B, #1A3A7A); }
-    .section-bg { background-color: #1A3A7A !important; }
-    .card-bg { 
-      background-color: #0F2B5B !important; 
-      border: 1px solid #D4AF37; 
-      border-radius: 1rem; 
+
+    /* ── UTILS ── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section-sm { padding: 64px 0; }
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,.4);
+      border-radius: 50px;
+      padding: 5px 18px;
+      margin-bottom: 20px;
     }
-    .carousel-container {
-      background-color: #1A3A7A !important;
-      border-radius: 0.75rem;
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-sub {
+      color: rgba(201,168,76,.8);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 580px;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .25s, transform .2s, box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(201,168,76,.35);
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,.45); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 15px 35px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      transition: background .25s, color .25s, transform .2s;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,36,71,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(201,168,76,.15);
+      padding: 16px 0;
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.5); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-logo .logo-dot {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: rgba(201,168,76,.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 9px 22px;
+      border-radius: var(--radius);
+      font-weight: 700 !important;
+      transition: background .25s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--gold); border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 90px;
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4);
     }
-    .checkmark { color: #D4AF37; font-weight: bold; font-size: 1.4rem; margin-right: 0.75rem; }
-    .cross { color: #ff6b6b; font-weight: bold; font-size: 1.4rem; margin-right: 0.75rem; }
-    
-    /* Form fix: dark text + visible placeholders */
-    input, textarea {
-      background-color: #ffffff !important;
-      color: #0F2B5B !important;
-      border: 2px solid #D4AF37;
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,.06) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 80%, rgba(20,47,94,.8) 0%, transparent 60%);
+      pointer-events: none;
     }
-    input::placeholder, textarea::placeholder {
-      color: #4B6CB7 !important;   /* medium blue placeholder */
-      opacity: 1;
+    /* Decorative geometric lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 10%; right: 38%;
+      width: 1px; height: 200px;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,.3), transparent);
+    }
+    .hero-content { position: relative; z-index: 2; padding: 60px 0; }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .hero-title .accent { color: var(--gold); display: block; }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: rgba(201,168,76,.7);
+      line-height: 1.75;
+      margin-bottom: 44px;
+      max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-stats { display: flex; gap: 40px; }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.8rem; color: rgba(201,168,76,.6); letter-spacing: 0.05em; margin-top: 4px; }
+
+    .hero-image-side {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-img-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 680px;
+    }
+    .hero-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      display: block;
+    }
+    /* Fallback if no image */
+    .hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, var(--navy-mid), var(--navy-light));
+      border: 1px solid rgba(201,168,76,.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .hero-img-placeholder svg { opacity: .3; }
+    .hero-img-placeholder p { color: rgba(201,168,76,.4); font-size: 0.85rem; }
+    .hero-badge {
+      position: absolute;
+      bottom: 40px; left: -30px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      box-shadow: 0 8px 40px rgba(0,0,0,.4);
+      max-width: 200px;
+    }
+    .hero-badge strong { font-size: 1.3rem; display: block; font-family: 'Playfair Display', serif; }
+    .hero-rating {
+      position: absolute;
+      top: 40px; right: -20px;
+      background: var(--navy-mid);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      text-align: center;
+      min-width: 150px;
+    }
+    .hero-rating .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+    .hero-rating .rating-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); font-weight: 700; }
+    .hero-rating .rating-label { font-size: 0.72rem; color: rgba(201,168,76,.6); }
+
+    /* Grid accent */
+    .grid-line {
+      position: absolute;
+      border: 1px solid rgba(201,168,76,.08);
+      border-radius: var(--radius-lg);
+      pointer-events: none;
+    }
+    .grid-line-1 { inset: -20px; }
+    .grid-line-2 { inset: -50px; border-color: rgba(201,168,76,.04); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,168,76,.12);
+      border-bottom: 1px solid rgba(201,168,76,.12);
+      padding: 28px 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(201,168,76,.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .trust-item svg { flex-shrink: 0; }
+    .trust-divider { width: 1px; height: 28px; background: rgba(201,168,76,.15); }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-image-col { position: relative; }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      display: block;
+    }
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, var(--navy-mid), var(--navy-light));
+      border: 1px solid rgba(201,168,76,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .experience-chip {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      font-weight: 700;
+      box-shadow: 0 10px 40px rgba(0,0,0,.4);
+      text-align: center;
+    }
+    .experience-chip strong { font-family: 'Playfair Display', serif; font-size: 2.5rem; display: block; }
+    .experience-chip span { font-size: 0.8rem; letter-spacing: .05em; }
+    .about-content .section-sub { max-width: 100%; margin-bottom: 28px; }
+    .about-points { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(201,168,76,.06);
+      border: 1px solid rgba(201,168,76,.12);
+      border-radius: var(--radius);
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .check-icon svg { width: 12px; height: 12px; }
+    .about-point p { color: rgba(201,168,76,.85); font-size: 0.95rem; line-height: 1.5; }
+
+    /* ── SERVICES ── */
+    .services-section { background: var(--navy-mid); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .service-card {
+      background: var(--navy);
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .service-card:hover { border-color: rgba(201,168,76,.4); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: rgba(201,168,76,.1);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      transition: background .3s;
+    }
+    .service-card:hover .service-icon { background: rgba(201,168,76,.2); }
+    .service-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--white); margin-bottom: 10px; }
+    .service-card p { color: rgba(201,168,76,.65); font-size: 0.9rem; line-height: 1.65; }
+    .service-card .service-not {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: rgba(201,168,76,.4);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* Force gold text everywhere important */
-    p, li, h1, h2, h3, h4, .testimonial-text, .services li, blockquote {
-      color: #D4AF37 !important;
+    /* ── GALLERY / BEFORE-AFTER ── */
+    .gallery-intro { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 20px; }
+    .before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .ba-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/10;
+      background: var(--navy-mid);
+      border: 1px solid rgba(201,168,76,.15);
     }
-    .text-white { color: #D4AF37 !important; }   /* Kill rogue white text */
+    .ba-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .ba-placeholder p { color: rgba(201,168,76,.35); font-size: 0.8rem; }
+    .ba-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+    }
+    .ba-badge.before { background: rgba(13,36,71,.9); color: rgba(201,168,76,.8); border: 1px solid rgba(201,168,76,.3); }
+    .ba-badge.after { background: var(--gold); color: var(--navy); }
+    .ba-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(13,36,71,.92));
+      padding: 20px 20px 16px;
+      font-size: 0.85rem;
+      color: rgba(201,168,76,.85);
+    }
+    .gallery-note { text-align: center; margin-top: 32px; color: rgba(201,168,76,.45); font-size: 0.85rem; }
 
-    html, body, section, div:not(input):not(textarea):not(.bg-white) {
-      background-color: inherit !important;
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--navy-mid); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .testi-card {
+      background: var(--navy);
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: relative;
+      transition: border-color .3s;
     }
+    .testi-card:hover { border-color: rgba(201,168,76,.35); }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(201,168,76,.12);
+      line-height: .7;
+      position: absolute;
+      top: 24px; left: 28px;
+    }
+    .testi-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .testi-text { color: rgba(201,168,76,.8); font-size: 0.95rem; line-height: 1.7; margin-bottom: 28px; position: relative; z-index: 1; }
+    .testi-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid rgba(201,168,76,.1); padding-top: 20px; }
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .author-name { color: var(--white); font-weight: 600; font-size: 0.9rem; }
+    .author-source { color: rgba(201,168,76,.5); font-size: 0.78rem; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .contact-info { padding-top: 8px; }
+    .contact-info .section-sub { margin-bottom: 40px; }
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(201,168,76,.1);
+    }
+    .contact-detail:first-of-type { border-top: 1px solid rgba(201,168,76,.1); }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: rgba(201,168,76,.1);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .contact-label { font-size: 0.75rem; color: rgba(201,168,76,.45); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-value { color: var(--gold); font-weight: 500; text-decoration: none; font-size: 1rem; }
+    .contact-value:hover { color: var(--gold-light); text-decoration: underline; }
+
+    .contact-form-wrapper {
+      background: var(--navy-mid);
+      border: 1px solid rgba(201,168,76,.15);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+    }
+    .form-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--white); margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(201,168,76,.6); margin-bottom: 8px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(13,36,71,.9) !important;
+      color: var(--gold) !important;
+      border: 1px solid rgba(201,168,76,.25) !important;
+      border-radius: var(--radius) !important;
+      padding: 14px 18px !important;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(201,168,76,.35) !important; }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: rgba(201,168,76,.6) !important; }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { width: 100%; justify-content: center; font-size: 1.05rem; padding: 18px; }
+    .form-note { text-align: center; margin-top: 14px; font-size: 0.78rem; color: rgba(201,168,76,.4); }
+    .success-banner {
+      display: none;
+      background: rgba(201,168,76,.1);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080f1e;
+      border-top: 1px solid rgba(201,168,76,.12);
+      padding: 60px 0 32px;
+    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+    .footer-brand {}
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 14px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-desc { color: rgba(201,168,76,.5); font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { color: rgba(201,168,76,.55); font-size: 0.88rem; text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(201,168,76,.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { color: rgba(201,168,76,.35); font-size: 0.82rem; }
+    .footer-lic { color: rgba(201,168,76,.35); font-size: 0.82rem; }
+
+    /* Mobile Nav */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13,36,71,.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--gold); font-size: 1.5rem; text-decoration: none; font-family: 'Playfair Display', serif; }
+    .mobile-close { position: absolute; top: 24px; right: 24px; cursor: pointer; font-size: 1.8rem; color: var(--gold); background: none; border: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 120px; }
+      .hero-image-side { display: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .before-after-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image-col { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 70px 0; }
+      .services-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .trust-inner { gap: 28px; }
+      .trust-divider { display: none; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+    }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
 
-  <!-- Hero Header -->
-  <header class="text-center py-20 px-6">
-    <h1 class="text-5xl md:text-7xl font-bold">
-      JLZ Handiwork
-    </h1>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">JLZ <span>Handiwork</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Work</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
 
-    <img 
-      src="hero-pro.jpg" 
-      alt="Jorge – Owner & Lead Handyman" 
-      class="mt-10 mx-auto max-w-md w-full h-auto rounded-xl border-4 border-[#D4AF37] shadow-2xl object-cover"
-    />
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#gallery" onclick="closeMobile()">Our Work</a>
+    <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+    <a href="#contact" onclick="closeMobile()">Get a Quote</a>
+    <a href="tel:+17609097770" class="btn-gold">(760) 909-7770</a>
+  </div>
 
-    <p class="mt-8 text-xl md:text-2xl font-medium">
-      Reliable Repairs • Painting • Drywall • Carpentry • Quality Work Guaranteed
-    </p>
+  <!-- HERO -->
+  <header class="hero container" id="hero">
+    <div class="hero-content fade-up">
+      <div class="hero-eyebrow">San Diego County, CA</div>
+      <h1 class="hero-title">
+        Expert Handyman
+        <span class="accent">You Can Trust.</span>
+      </h1>
+      <p class="hero-tagline">
+        Over a decade of precision craftsmanship — from carpentry and drywall to painting and repairs. Every job done right the first time.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:+17609097770" class="btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.1 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 013 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (760) 909-7770
+        </a>
+        <a href="#contact" class="btn-outline">Free Estimate →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">27 Reviews</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Jobs Completed</div>
+        </div>
+      </div>
+    </div>
 
-    <a 
-      href="tel:+17609097770" 
-      class="mt-10 inline-block accent-bg accent-text px-12 py-6 rounded-xl text-xl font-bold shadow-xl hover:accent-hover transition transform hover:scale-105"
-    >
-      Call Now: (760) 909-7770
-    </a>
+    <div class="hero-image-side">
+      <div class="hero-img-wrapper">
+        <div class="grid-line grid-line-1"></div>
+        <div class="grid-line grid-line-2"></div>
+        <!-- Replace src with hero-pro.jpg when ready -->
+        <div class="hero-img-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <p>hero-pro.jpg</p>
+        </div>
+        <div class="hero-badge">
+          <strong>Licensed</strong>& Insured<br>Since 2015
+        </div>
+        <div class="hero-rating">
+          <div class="stars">★★★★★</div>
+          <div class="rating-num">4.9</div>
+          <div class="rating-label">27 verified reviews</div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- About -->
-  <section class="py-20 px-6 section-bg">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-10">About JLZ Handiwork</h2>
-      <p class="text-xl leading-relaxed max-w-4xl mx-auto">
-        Hi, I'm Jorge, the hands and heart behind JLZ Handiwork.<br><br>
-        With over a decade of experience, I’ve dedicated myself to helping homeowners fix, build, and improve their spaces with care, precision, and pride. Every project is treated as if it were my own home — clean work areas, clear communication, and attention to every detail.<br><br>
-        From carpentry and drywall repair to painting and fine-tuning doors & windows, I ensure the job is done right the first time. My goal is straightforward: leave every client feeling confident, respected, and completely satisfied.<br><br>
-        Looking for a reliable, skilled, and easy-to-work-with handyman? You’ve found him.
-      </p>
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container trust-inner">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Licensed & Insured
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Mon–Sat · 7AM–7PM
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        San Diego County, CA
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+        Free Quotes
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Quality Guaranteed
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Trust Highlights -->
-  <section class="py-16 px-6 text-center section-bg">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-      <div class="p-8 rounded-xl card-bg">
-        <div class="text-5xl font-bold">4.9</div>
-        <div class="text-xl mt-3">from 27 reviews</div>
-      </div>
-      <div class="p-8 rounded-xl card-bg">
-        <div class="text-5xl font-bold">Licensed<br>& Insured</div>
-      </div>
-      <div class="p-8 rounded-xl card-bg">
-        <div class="text-5xl font-bold">Local<br>Since 2015</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Carousel -->
-  <section class="py-20 px-6 section-bg">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Before & After</h2>
-      <div class="carousel-container" id="carousel">
-        <div class="carousel-track" id="track">
-          <img src="https://via.placeholder.com/1200x600/0F2B5B/ffffff?text=Before+%3A+Old+Fence" alt="Before" class="carousel-slide"/>
-          <img src="https://via.placeholder.com/1200x600/0F2B5B/D4AF37?text=After+%3A+New+Fence" alt="After" class="carousel-slide"/>
-          <!-- Replace with real images when ready -->
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-col">
+          <div class="about-img-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <div class="experience-chip">
+            <strong>10+</strong>
+            <span>Years of Experience</span>
+          </div>
         </div>
-        <button class="carousel-arrow prev" id="prev">←</button>
-        <button class="carousel-arrow next" id="next">→</button>
-        <div class="carousel-dots" id="dots"></div>
+        <div class="about-content fade-up">
+          <div class="tag">About JLZ Handiwork</div>
+          <h2 class="section-title">Hi, I'm Jorge — The Man Behind the Work</h2>
+          <p class="section-sub">
+            With over a decade of hands-on experience, I've helped hundreds of San Diego County homeowners fix, build, and transform their spaces. Every project is treated as if it were my own home.
+          </p>
+          <div class="about-points">
+            <div class="about-point">
+              <div class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0D2447" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p><strong style="color:var(--gold-light)">Clean work areas.</strong> I respect your home — every job site is left spotless.</p>
+            </div>
+            <div class="about-point">
+              <div class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0D2447" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p><strong style="color:var(--gold-light)">Clear communication.</strong> You'll always know what's happening, start to finish.</p>
+            </div>
+            <div class="about-point">
+              <div class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0D2447" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p><strong style="color:var(--gold-light)">Done right the first time.</strong> Precision craftsmanship, zero shortcuts.</p>
+            </div>
+          </div>
+          <a href="#contact" class="btn-gold">Book a Free Consultation</a>
+        </div>
       </div>
-      <p class="text-center mt-6 text-xl">
-        Real results – swipe or use arrows to see transformations
-      </p>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Services Offered</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-xl">
-        
-        <div class="card-bg p-10 rounded-2xl">
-          <h3 class="text-3xl font-bold mb-6">Project Type</h3>
-          <ul class="space-y-4">
-            <li><span class="checkmark">✓</span> Repairs</li>
-            <li><span class="checkmark">✓</span> Installation</li>
-            <li><span class="checkmark">✓</span> Maintenance</li>
-            <li><span class="checkmark">✓</span> Assembly</li>
-            <li><span class="checkmark">✓</span> Painting</li>
-            <li><span class="checkmark">✓</span> Other handyman services</li>
-            <li class="mt-6"><span class="cross">×</span> Cleaning</li>
+  <!-- SERVICES -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="fade-up" style="text-align:center;max-width:600px;margin:0 auto">
+        <div class="tag">What I Do</div>
+        <h2 class="section-title">Services Offered</h2>
+        <p class="section-sub" style="margin:0 auto">From quick repairs to full room transformations — skilled, reliable, and priced fairly.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>General Repairs</h3>
+          <p>Doors sticking, leaky faucets, broken fixtures, worn trim. If it's broken, I fix it — fast and properly.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Carpentry</h3>
+          <p>Custom shelves, cabinet repairs, fencing, decking, and framing. Built to last with expert joinery.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Drywall</h3>
+          <p>Patch holes, repair water damage, smooth textures, and seamless finishing. Your walls deserve to look perfect.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M7 20h10M10 20v-6.5M10 13.5c0 0-3-1.5-3-4 0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.5-3 4-3 4"/></svg>
+          </div>
+          <h3>Painting</h3>
+          <p>Interior and exterior painting with precise prep work, clean lines, and durable finishes. Every surface covered.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          </div>
+          <h3>Installation & Assembly</h3>
+          <p>Furniture assembly, fixture installation, shelving, TV mounts, doors, windows — done the right way.</p>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Maintenance Programs</h3>
+          <p>Scheduled seasonal maintenance to keep your home in top shape year-round. Preventative care saves money.</p>
+        </div>
+
+      </div>
+      <p style="text-align:center;margin-top:20px;font-size:.8rem;color:rgba(201,168,76,.3)">✕ Cleaning services not offered</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="gallery-intro fade-up">
+        <div>
+          <div class="tag">Before & After</div>
+          <h2 class="section-title">Real Results,<br>Real Homes</h2>
+        </div>
+        <p class="section-sub" style="max-width:340px">Add your project photos here — upload them directly to Vercel and reference them in the image src attributes below.</p>
+      </div>
+      <div class="before-after-grid">
+        <div class="ba-card">
+          <!-- Replace src with real before image -->
+          <div class="ba-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <p>before-1.jpg</p>
+          </div>
+          <span class="ba-badge before">Before</span>
+          <div class="ba-caption">Worn fence — Escondido, CA</div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <p>after-1.jpg</p>
+          </div>
+          <span class="ba-badge after">After</span>
+          <div class="ba-caption">New cedar fence — same day turnaround</div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <p>before-2.jpg</p>
+          </div>
+          <span class="ba-badge before">Before</span>
+          <div class="ba-caption">Damaged drywall — Oceanside, CA</div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <p>after-2.jpg</p>
+          </div>
+          <span class="ba-badge after">After</span>
+          <div class="ba-caption">Smooth, repainted wall — flawless finish</div>
+        </div>
+      </div>
+      <p class="gallery-note">📸 Replace placeholder images with your real before/after photos — just drop them in your Vercel project folder</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="fade-up" style="text-align:center;max-width:600px;margin:0 auto">
+        <div class="tag">Client Reviews</div>
+        <h2 class="section-title">What Homeowners Say</h2>
+        <p class="section-sub" style="margin:0 auto">27 reviews · 4.9 average across Thumbtack, Google, and Yelp</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card fade-up">
+          <div class="quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Fixed my fence in one day — no mess left behind! Fast, clean, and professional. I've already recommended Jorge to three neighbors.</p>
+          <div class="testi-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Sarah M.</div>
+              <div class="author-source">via Google</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card fade-up">
+          <div class="quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Deck looks brand new again. Fair price and excellent craftsmanship. He showed up on time and kept me updated the whole time.</p>
+          <div class="testi-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="author-name">Mike R.</div>
+              <div class="author-source">via Thumbtack</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card fade-up">
+          <div class="quote-mark">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Jorge really listens to what you need. The job was perfect — our drywall looks like it was never touched. Highly recommend!</p>
+          <div class="testi-author">
+            <div class="author-avatar">L</div>
+            <div>
+              <div class="author-name">Lisa T.</div>
+              <div class="author-source">via Thumbtack</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <div class="tag">Get in Touch</div>
+          <h2 class="section-title">Ready to Get<br>Your Free Quote?</h2>
+          <p class="section-sub">
+            Fill out the form or reach out directly. I typically respond within a few hours, and can often schedule a same-week visit.
+          </p>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.1 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 013 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <a href="tel:+17609097770" class="contact-value">(760) 909-7770</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <a href="mailto:jlzhandiwork@gmail.com" class="contact-value">jlzhandiwork@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Service Area</div>
+              <span class="contact-value" style="cursor:default">San Diego County, California</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Hours</div>
+              <span class="contact-value" style="cursor:default">Mon–Sat · 7:00 AM – 7:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper fade-up">
+          <h3 class="form-title">Request a Free Estimate</h3>
+          <div class="success-banner" id="successBanner">
+            ✓ Message sent! Jorge will be in touch shortly.
+          </div>
+          <form id="quote-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Jorge" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Lopez" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="(760) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label>Service Needed</label>
+              <select>
+                <option value="" disabled selected>Select a service…</option>
+                <option>General Repairs</option>
+                <option>Carpentry</option>
+                <option>Drywall</option>
+                <option>Painting</option>
+                <option>Installation / Assembly</option>
+                <option>Maintenance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Project Description</label>
+              <textarea placeholder="Describe what needs to be fixed, installed, or built. Include any relevant details…" required></textarea>
+            </div>
+            <button type="submit" class="btn-gold form-submit">
+              Send Message — Get a Free Quote
+            </button>
+            <p class="form-note">No spam, ever. I'll respond within a few hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">JLZ <span>Handiwork</span></div>
+          <p class="footer-desc">Quality handyman services across San Diego County. Licensed, insured, and dedicated to getting the job done right the first time — every time.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">General Repairs</a></li>
+            <li><a href="#services">Carpentry</a></li>
+            <li><a href="#services">Drywall</a></li>
+            <li><a href="#services">Painting</a></li>
+            <li><a href="#services">Installation</a></li>
           </ul>
         </div>
-
-        <!-- Repeat similar structure for other categories -->
-        <!-- ... (Estimated Time, Work Focus, Property Type) ... -->
-        <!-- Copy-paste the pattern above for the remaining three sections -->
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-20 px-6 section-bg">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Client Testimonials</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="card-bg p-8 rounded-2xl">
-          <p class="text-xl">"Fixed my fence in one day – no mess left behind! Fast, clean, and professional."</p>
-          <p class="mt-6 font-semibold text-lg">Sarah next door ★★★★★</p>
-        </div>
-        <div class="card-bg p-8 rounded-2xl">
-          <p class="text-xl">"Deck looks brand new again. Fair price and excellent craftsmanship."</p>
-          <p class="mt-6 font-semibold text-lg">Mike ★★★★★</p>
-        </div>
-        <div class="card-bg p-8 rounded-2xl">
-          <p class="text-xl">"Jorge really listens and the job was perfect. Highly recommend!"</p>
-          <p class="mt-6 font-semibold text-lg">Lisa (via Thumbtack) ★★★★★</p>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+17609097770">(760) 909-7770</a></li>
+            <li><a href="mailto:jlzhandiwork@gmail.com">jlzhandiwork@gmail.com</a></li>
+            <li><a href="#contact">Free Quote</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="py-20 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-12">Get Your Free Quote</h2>
-      
-      <form id="quote-form" class="space-y-6 max-w-lg mx-auto">
-        <input type="text" placeholder="Your Name" required class="w-full p-5 rounded-xl text-lg"/>
-        <input type="tel" placeholder="Phone Number" required class="w-full p-5 rounded-xl text-lg"/>
-        <textarea placeholder="Describe what needs fixing (fence, deck, paint, drywall, etc.)" rows="5" required class="w-full p-5 rounded-xl text-lg"></textarea>
-        <button type="submit" class="w-full accent-bg accent-text py-6 rounded-xl font-bold text-2xl shadow-xl hover:accent-hover transition transform hover:scale-105">
-          Send Message → Get Quote
-        </button>
-      </form>
-
-      <div class="mt-12 text-xl space-y-4">
-        <p>Or reach me directly:</p>
-        <p><a href="tel:+17609097770" class="hover:underline">(760) 909-7770</a></p>
-        <p><a href="mailto:jlzhandiwork@gmail.com" class="hover:underline">jlzhandiwork@gmail.com</a></p>
-        <p>null Camino Del Cielo, San Diego County, CA</p>
-        <p class="text-lg mt-6">Monday–Saturday: 7:00 AM – 7:00 PM<br>Closed Sunday</p>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 JLZ Handiwork · San Diego County, CA</span>
+        <span class="footer-lic">Licensed & Insured · Mon–Sat 7AM–7PM</span>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-12 bg-[#0F2B5B] text-center border-t border-[#1A3A7A]">
-    <p class="text-xl font-medium">© 2026 JLZ Handiwork – Built Tough</p>
-    <p class="mt-4 text-lg">(760) 909-7770 • jlzhandiwork@gmail.com</p>
-    <p class="mt-2">null Camino Del Cielo, San Diego County, California</p>
   </footer>
 
   <script>
+    // ── Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ── Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    // ── Scroll fade-up
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Trigger hero immediately
+    document.querySelector('.hero-content').classList.add('visible');
+
+    // ── Form submit
     document.getElementById('quote-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert("Thank you! Your quote request has been sent.");
+      const banner = document.getElementById('successBanner');
+      banner.style.display = 'block';
       this.reset();
+      setTimeout(() => { banner.style.display = 'none'; }, 6000);
     });
-    // Carousel JS here...
   </script>
 
 </body>
